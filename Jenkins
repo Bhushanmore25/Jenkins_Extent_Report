@@ -3,10 +3,10 @@ pipeline {
 
     stages {
         stage('Checkout') {
-    steps {
-        git branch: 'main', url: 'https://github.com/Bhushanmore25/Jenkins_Extent_Report.git'
-    }
-}
+            steps {
+                git branch: 'main', url: 'https://github.com/Bhushanmore25/Jenkins_Extent_Report.git'
+            }
+        }
 
         stage('Build') {
             steps {
@@ -23,9 +23,9 @@ pipeline {
         stage('Report') {
             steps {
                 publishHTML([
-                    reportDir: 'reports',
-                    reportFiles: 'extent-report.html',
-                    reportName: 'Test Report'
+                    reportDir: 'target',
+                    reportFiles: 'index.html',
+                    reportName: 'Extent Report'
                 ])
             }
         }
