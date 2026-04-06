@@ -3,10 +3,10 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            steps {
-                git 'https://github.com/Bhushanmore25/Jenkins_Extent_Report.git'
-            }
-        }
+    steps {
+        git branch: 'main', url: 'https://github.com/Bhushanmore25/Jenkins_Extent_Report.git'
+    }
+}
 
         stage('Build') {
             steps {
